@@ -158,4 +158,7 @@ export default {
 </script>
 
 <style>
+.item {
+  font-size: 2rem;
+}
 </style>

@@ -118,7 +118,7 @@ h6 {
   max-height: 55vh;
   object-fit: cover;
   object-position: 50% 50%;
-  width: 100%;
+  // width: 100%;
 }
 .container .single .post-content {
   line-height: 1.618;

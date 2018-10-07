@@ -1,14 +1,14 @@
 {
-  "sitename": "Bael",
-  "sitedescription": "A fashionable brutalist blog template using Netlify CMS and Nuxt.js.",
+  "sitename": "Ran Guin",
+  "sitedescription": "A basic personal sandbox for posting miscellaneous blogs",
   "siteicon": "/images/uploads/icon.png",
   "showmenu": true,
   "emailsignup": true,
   "menu": [
     {
-      "name": "jake101",
+      "name": "Cosine Systems",
       "position": "1",
-      "link": "https://www.jake101.com/"
+      "link": "https://www.cosinesystems.org"
     },
     {
       "name": "Nuxt.js",

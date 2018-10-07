@@ -105,3 +105,8 @@ export default {
   }
 };
 </script>
+<style>
+.featured-image {
+  max-height: 10rem;
+  height: 5rem;
+}
