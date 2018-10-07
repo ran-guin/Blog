@@ -3,7 +3,8 @@
   "sitedescription": "A basic personal sandbox for posting miscellaneous blogs",
   "siteicon": "/images/uploads/icon.png",
   "showmenu": true,
-  "emailsignup": true,
+  "emailsignup": false,
+  "netiflydeploy": false,
   "menu": [
     {
       "name": "Cosine Systems",

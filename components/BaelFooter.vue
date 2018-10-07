@@ -16,7 +16,6 @@
           <div v-else>&nbsp;</div>
 
         </div>
-
       </div>
       <div class="xs-text-left xs-p2 xs-border" :class="signupAboutSize">
         <div class="item">
@@ -47,7 +46,7 @@
           </ul>
         </div>
       </div>
-      <div class="xs-text-left xs-p2 xs-border" :class="signupAboutSize">
+      <div v-if="deployBoolean" class="xs-text-left xs-p2 xs-border" :class="signupAboutSize">
         <div class="item">
           <div class="footer__heading xs-mb2">Deploy</div>
 
@@ -58,7 +57,7 @@
         </div>
       </div>
       <div class="c-12 xs-text-left xs-p2 xs-border">
-        <div class="item xs-text-6">An open source design by
+        <div class="item xs-text-6">An open source blog by Ran Guin ... tweaked from another open source template built by: &nbsp;
           <a href="https://jake101.com">jake101</a>
         </div>
       </div>
@@ -91,8 +90,10 @@ export default {
   computed: {
     signupAboutSize: function() {
       return {
-        "c-25": this.signupBoolean,
-        "c-4": !this.signupBoolean
+        "c-25": this.signupBoolean && this.signupBoolean,
+        "c-4":  !this.signupBoolean && this.deployBooean,
+        "c-4":  this.signupBoolean && !this.deployBooean,
+        "c-50": !this.signupBoolean && !this.deployBoolean
       };
     },
     prevpage() {
@@ -124,6 +125,9 @@ export default {
     },
     signupBoolean() {
       return this.$store.state.siteInfo.emailsignup;
+    },
+    deployBoolean() {
+      return this.$store.state.siteInfo.netiflydeploy;
     }
   }
 };
