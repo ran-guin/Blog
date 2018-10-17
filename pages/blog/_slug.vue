@@ -17,11 +17,11 @@
           </no-ssr>
           <div class="xs-py3 post-content text-gray-lighter">
             <div v-if="lastP">
-              <a :href="lastP">&lt; Last Page</a>
+              <a :href="lastP">&lt; Previous Page</a>
               <span>&nbsp; &nbsp;</span>
             </div>
             <div v-if="nextP">
-              <a :href="nextP">Next Page &gt;</a>
+              <a :href="nextP" style="float: right">Next Page &gt;</a>
               <span>&nbsp; &nbsp;</span>
             </div>
             <div v-html="$md.render(body)"></div>
