@@ -16,7 +16,14 @@
              </div>
           </no-ssr>
           <div class="xs-py3 post-content text-gray-lighter">
-            <a href='{{next}}'>{{next}}</a>
+            <div v-if="lastP">
+              <a :href='lastP.ref'>&lt; Last Page</a>
+              <span>&nbsp; &nbsp;</span>
+            </div>
+            <div v-if="nextP">
+              <a :href='nextP.ref'>{{nextP.label}} Next Page &gt;</a>
+              <span>&nbsp; &nbsp;</span>
+            </div>
             <div v-html="$md.render(body)"></div>
           </div>
         </div>
@@ -38,7 +45,8 @@ export default {
    
    await store.commit("SET_TITLE", post.title);
      await store.commit("SET_THUMB", post.thumbnail);
-     await store.commit("SET_CRUMB", 'Blog');
+     await store.commit("SET_NEXT", post.next);
+     await store.commit("SET_PREVIOUS", post.previous);
    await   store.commit("SET_POSTCAT", post.category);
     await store.commit("paginateOff", false);
     return post;
@@ -93,6 +101,22 @@ export default {
   computed: {
     theThumb() {
       return this.$store.state.theThumbnail;
+    },
+    nextP() {
+      var nextPage = this.$store.state.nextPage;
+      if (nextPage) {
+        return 'https://rans-blog.netlify.com/blog/' + nextPage
+      } else {
+        return ''
+      }
+    },
+    lastP() {
+      var lastPage = this.$store.state.lastPage;
+      if (lastPage) {
+        return 'https://rans-blog.netlify.com/blog/' + lastPage
+      } else {
+        return ''
+      }
     },
     allBlogPosts() {
       return this.$store.state.blogPosts;
