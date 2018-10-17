@@ -16,6 +16,7 @@
              </div>
           </no-ssr>
           <div class="xs-py3 post-content text-gray-lighter">
+            <a href='{{next}}'>{{next}}</a>
             <div v-html="$md.render(body)"></div>
           </div>
         </div>
