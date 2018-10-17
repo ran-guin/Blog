@@ -19,8 +19,8 @@
             <div>
               <a :href="lastP" v-if="lastP">&lt; Previous Page</a>
               <a :href="nextP" v-if="nextP" style="float: right">Next Page &gt;</a>
-              <hr />
             </div>
+            <hr style="width: 100%" />
             <div v-html="$md.render(body)"></div>
           </div>
         </div>
