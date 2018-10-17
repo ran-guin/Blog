@@ -16,9 +16,10 @@
              </div>
           </no-ssr>
           <div class="xs-py3 post-content text-gray-lighter">
-            <div v-if="lastP">
+            <div>
               <a :href="lastP" v-if="lastP">&lt; Previous Page</a>
               <a :href="nextP" v-if="nextP" style="float: right">Next Page &gt;</a>
+              <hr />
             </div>
             <div v-html="$md.render(body)"></div>
           </div>
