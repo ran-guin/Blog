@@ -19,6 +19,8 @@ const createStore = () =>
       gridNumCats: '11',
       gridOffset: '0',
       theThumbnail: '',
+      nextPage: '',
+      lastPage: '',
       theCategory: '',
       theCrumb: '',
       allCats: [],
@@ -149,6 +151,12 @@ const createStore = () =>
       },
       SET_THUMB(state, data) {
         state.theThumbnail = data
+      },
+      SET_NEXT(state, data) {
+        state.nextPage = data
+      },
+      SET_PREVIOUS(state, data) {
+        state.lastPage = data
       },
       SET_TITLE(state, data) {
         state.blogTitle = data

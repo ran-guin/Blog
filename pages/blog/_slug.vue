@@ -16,6 +16,11 @@
              </div>
           </no-ssr>
           <div class="xs-py3 post-content text-gray-lighter">
+            <div>
+              <a :href="lastP" v-if="lastP">&lt; Previous Page</a>
+              <a :href="nextP" v-if="nextP" style="float: right">Next Page &gt;</a>
+            </div>
+            <hr style="width: 100%" />
             <div v-html="$md.render(body)"></div>
           </div>
         </div>
@@ -37,7 +42,8 @@ export default {
    
    await store.commit("SET_TITLE", post.title);
      await store.commit("SET_THUMB", post.thumbnail);
-     await store.commit("SET_CRUMB", 'Blog');
+     await store.commit("SET_NEXT", post.next);
+     await store.commit("SET_PREVIOUS", post.previous);
    await   store.commit("SET_POSTCAT", post.category);
     await store.commit("paginateOff", false);
     return post;
@@ -92,6 +98,22 @@ export default {
   computed: {
     theThumb() {
       return this.$store.state.theThumbnail;
+    },
+    nextP() {
+      var nextPage = this.$store.state.nextPage;
+      if (nextPage) {
+        return 'https://rans-blog.netlify.com/blog/' + nextPage
+      } else {
+        return ''
+      }
+    },
+    lastP() {
+      var lastPage = this.$store.state.lastPage;
+      if (lastPage) {
+        return 'https://rans-blog.netlify.com/blog/' + lastPage
+      } else {
+        return ''
+      }
     },
     allBlogPosts() {
       return this.$store.state.blogPosts;
